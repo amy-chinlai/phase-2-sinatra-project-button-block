@@ -19,6 +19,13 @@ class BlocksController < ApplicationController
         erb :'blocks/edit'
     end
 
+    post '/blocks' do
+        @block = Block.new(params[:block])
+        @block.user = User.find_by_id(session[:user_id])
+        @block.save
+        redirect to "/#{@block.user_id}/blocks/#{@block.id}"
+    end
+
     
 
 end
