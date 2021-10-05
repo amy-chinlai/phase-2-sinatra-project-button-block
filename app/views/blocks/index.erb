@@ -1,0 +1,14 @@
+<h1>Your Blocks</h1>
+
+<table>
+<% @blocks.each do |block| %>
+
+    <tr>
+        <td><%= block.name %></td>
+        <td><a href="/<%= block.user_id %>/blocks/<%= block.id %>">Show</td>
+        <td><a href="/<%= block.user_id %>/blocks/<%= block.id %>/edit">Edit</td>
+    </tr>
+
+
+<% end %>
+</table>

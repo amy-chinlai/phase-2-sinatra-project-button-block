@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Button Block Creator</title>
+  </head>
+  <body>
+  <%= yield %>
+
+  <% if logged_in? %>
+    <form method="POST" action="/logout">
+      <input type="submit" value="Logout">
+    </form>
+  <% end %>
+  </body>
+</html>
