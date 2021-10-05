@@ -1,0 +1,11 @@
+<h1>Edit Button</h1>
+
+<form method="POST" action="/<%= @button.block.user_id %>/blocks/<%= @button.block.id %>/buttons/<%= @button.id %>">
+<input type="hidden" name="_method" value="PATCH">
+
+    <label>Multiplier: </label><input type="number" name="button[multiplier]" id="multiplier" value="<%= @button.multiplier %>"><br><br>
+    <label>Default: </label><input type="number" name="button[default]" id="default" value="<%= @button.default %>"><br><br>
+
+    <input type="submit" value="submit">
+
+</form>

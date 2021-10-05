@@ -11,6 +11,11 @@
     <tr>
         <td><%= button.multiplier %></td>
         <td><%= button.default %></td>
+        <td><a href="/<%= @block.user_id %>/blocks/<%= @block.id %>/buttons/<%= button.id %>/edit">Edit</a>
+        <td><form method="POST" action="/<%= @block.user_id %>/blocks/<%= @block.id %>/buttons/<%= button.id %>/delete">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete">
+            </form></td>
     </tr>
     <% end %>
 

@@ -31,6 +31,13 @@ class BlocksController < ApplicationController
         @block.update(params[:block])
         redirect to "/#{@block.user_id}/blocks/#{@block.id}"
     end
+
+    delete '/:id/blocks/:block_id/delete' do
+        @block = Block.find_by_id(params[:block_id])
+        @block.delete
+        redirect to "/#{@block.user_id}/blocks"
+        # flash to acknowledge delete
+    end
     
 
 end
