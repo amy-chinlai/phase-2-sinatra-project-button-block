@@ -26,6 +26,11 @@ class BlocksController < ApplicationController
         redirect to "/#{@block.user_id}/blocks/#{@block.id}"
     end
 
+    patch '/:id/blocks/:block_id' do
+        @block = Block.find_by_id(params[:block_id])
+        @block.update(params[:block])
+        redirect to "/#{@block.user_id}/blocks/#{@block.id}"
+    end
     
 
 end
