@@ -1,6 +1,6 @@
 <h1>Create New Block</h1>
 
-<form method="POST" action="/blocks">
+<form method="POST" action="/<%= @user.id %>/blocks">
 
     <label>Block Name: </label><input type="text" name="block[name]">
     <p>Choose the type of donation you want:</p>

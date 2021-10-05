@@ -3,7 +3,8 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "my_application_secret"
     set :views, Proc.new { File.join(root, "../views/") }
     enable :sessions
-  
+    require "easy_breadcrumbs"
+    helpers Sinatra::EasyBreadcrumbs
   
     get '/' do
       erb :index
@@ -21,6 +22,13 @@ class ApplicationController < Sinatra::Base
         User.find_by_id(session[:user_id]) if session[:user_id]
       end
 
+      def user_by_param
+        @user = User.find_by_id(params[:id])
+      end
+
+      def authenticated?
+        logged_in? && user_by_param == current_user
+      end
 
 
     end

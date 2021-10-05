@@ -11,6 +11,7 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem "tux"
+gem 'easy_breadcrumbs'
 
 group :test do
   gem 'rspec'

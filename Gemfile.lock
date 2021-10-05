@@ -33,6 +33,11 @@ GEM
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
     diff-lcs (1.4.4)
+    easy_breadcrumbs (0.5.0)
+      activesupport
+      erubis
+      sinatra
+    erubis (2.7.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
@@ -109,6 +114,7 @@ DEPENDENCIES
   bcrypt
   capybara
   database_cleaner
+  easy_breadcrumbs
   pry
   rack-test
   rake
