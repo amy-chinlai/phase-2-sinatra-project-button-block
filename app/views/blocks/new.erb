@@ -1,0 +1,12 @@
+<h1>Create New Block</h1>
+
+<form method="POST" action="/blocks">
+
+    <label>Block Name: </label><input type="text" name="name">
+    <p>Choose the type of donation you want:</p>
+    <label>Highest Previous Contribution</label><input type="radio" id="hpc" name="donation_type" value="HighestPreviousContribution">
+    <label>Latest Donation Amount</label><input type="radio" id="lda" name="donation_type" value="LatestDonationAmount">
+
+    <input type="submit" value="submit">
+
+</form>

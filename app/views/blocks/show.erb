@@ -1,9 +1,17 @@
 <h1><%= @block.name %></h1>
+<p><a href="/<%= @block.user_id %>/blocks/<%= @block.id %>/edit">Edit</a></p>
 
 <table>
     <th>Multiplier</th>
     <th>Default</th>
 
+
+    <% @block.buttons.each do |button| %>
+    <tr>
+        <td><%= button.multiplier %></td>
+        <td><%= button.default %></td>
+    </tr>
+    <% end %>
 
 
 <table>
