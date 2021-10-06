@@ -5,13 +5,15 @@
 <table>
     <th>Multiplier</th>
     <th>Default</th>
+    <th>Liquid Output</th>
 
 
     <% @block.buttons.each do |button| %>
     <tr>
         <td><%= button.multiplier %></td>
         <td><%= button.default %></td>
-        <td><a href="/<%= @block.user_id %>/blocks/<%= @block.id %>/buttons/<%= button.id %>/edit">Edit</a>
+        <td>{{ <%= @block.donation_type %> | times: <%= button.multiplier %> | default: <%= button.default %> }}</td>
+        <td><a href="/<%= @block.user_id %>/blocks/<%= @block.id %>/buttons/<%= button.id %>/edit">Edit</a></td>
         <td><form method="POST" action="/<%= @block.user_id %>/blocks/<%= @block.id %>/buttons/<%= button.id %>/delete">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="Delete">
@@ -20,6 +22,3 @@
     <% end %>
 
 <table>
-
-<h3>Your Liquid Output</h3>
-<%= @liquid %>
