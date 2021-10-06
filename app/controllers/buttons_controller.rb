@@ -35,6 +35,7 @@ class ButtonsController < ApplicationController
             redirect to "/#{@button.block.user_id}/blocks/#{@button.block.id}"
         else
             redirect to "/login"
+        end
     end
 
     patch '/:id/blocks/:block_id/buttons/:button_id' do

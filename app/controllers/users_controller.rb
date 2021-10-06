@@ -20,10 +20,12 @@ class UsersController < ApplicationController
         if params[:username] != "" && params[:email] != "" && params[:password] != ""
             @user = User.create(params)
             session[:user_id] = @user.id
-            redirect to "/#{session[:user_id]}/blocks"
-        else
-            # do a flash here that the fields are required
-            redirect to "/signup"
+            if !@user.valid?
+                # do a flash here that a user with that info already exists
+                redirect to "/login"
+            else
+                redirect to "/#{session[:user_id]}/blocks"
+            end
         end
     end
 
