@@ -12,3 +12,8 @@ use BlocksController
 use ButtonsController
 use UsersController
 run ApplicationController
+# use Rack::Static, :urls => ['/stylesheets', '/javascripts'], :root => 'public'
+
+map "/public" do
+  run Rack::Directory.new("./public")
+end
