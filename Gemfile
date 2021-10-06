@@ -13,8 +13,9 @@ gem 'bcrypt'
 gem 'tux'
 # gem 'easy_breadcrumbs'
 # gem 'breadcrumbs', '~> 0.1.7'
-gem 'sinatra-simple-navigation'
-gem 'simple-navigation'
+# gem 'sinatra-simple-navigation'
+# gem 'simple-navigation'
+# gem 'rack-flash3', :require => 'rack-flash3'
 
 group :test do
   gem 'rspec'

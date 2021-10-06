@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    
 
     get '/signup' do
         if logged_in?
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
         if params[:username] != "" && params[:email] != "" && params[:password] != ""
             @user = User.create(params)
             if !@user.valid?
-                # do a flash here that a user with that info already exists
+                flash[:message] = "A user with that username or email already exists. Please login."
                 redirect to "/login"
             else
                 session[:user_id] = @user.id

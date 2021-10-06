@@ -21,6 +21,8 @@ class BlocksController < ApplicationController
     get '/:id/blocks/:block_id' do
         if authenticated?
             @block = Block.find_by_id(params[:block_id])
+            @liquid = @block.liquid_output
+            puts @liquid
             erb :'blocks/show'
         else
             redirect to "/login"
