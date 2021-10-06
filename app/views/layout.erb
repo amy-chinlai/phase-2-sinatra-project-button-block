@@ -2,12 +2,12 @@
 <html>
   <head>
     <title>Button Block Creator</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
   </head>
   <body>
-  <%= easy_breadcrumbs %>
+  <h1>Button Block Generator</h1>
   <%= yield %>
 <br><br><br><br>
+<%= render_breadcrumbs %><br><br>
   <% if logged_in? %>
     <form method="POST" action="/logout">
       <input type="submit" value="Logout">

@@ -1,5 +1,5 @@
 require './config/environment'
-require "easy_breadcrumbs"
+require 'rubygems'
 
 
 if ActiveRecord::Base.connection.migration_context.needs_migration?

@@ -10,8 +10,11 @@ gem 'sqlite3'
 gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
-gem "tux"
-gem 'easy_breadcrumbs'
+gem 'tux'
+# gem 'easy_breadcrumbs'
+# gem 'breadcrumbs', '~> 0.1.7'
+gem 'sinatra-simple-navigation'
+gem 'simple-navigation'
 
 group :test do
   gem 'rspec'
