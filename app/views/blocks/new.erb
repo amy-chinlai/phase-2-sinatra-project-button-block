@@ -2,7 +2,7 @@
 
 <form method="POST" action="/<%= @user.id %>/blocks">
 
-    <label>Block Name: </label><input type="text" name="block[name]">
+    <label>Block Name: </label><input type="text" name="block[name]" required>
     <p>Choose the type of donation you want:</p>
     <label>Highest Previous Contribution</label><input type="radio" id="hpc" name="block[donation_type]" value="HighestPreviousContribution">
     <label>Latest Donation Amount</label><input type="radio" id="lda" name="block[donation_type]" value="LatestDonationAmount">

@@ -1,9 +1,5 @@
 class ApplicationController < Sinatra::Base
-#   require 'rubygems'
-# require 'sinatra/base'
-# require 'sinatra/simple-navigation'  
-  
-  register Sinatra::ActiveRecordExtension
+    register Sinatra::ActiveRecordExtension
     set :session_secret, "my_application_secret"
     set :views, Proc.new { File.join(root, "../views/") }
     enable :sessions
@@ -35,7 +31,7 @@ class ApplicationController < Sinatra::Base
       def render_breadcrumbs
         if request.path =~ /blocks\/\d+\/buttons\/\d+/
           "<a href='/#{session[:user_id]}/blocks'>Return to Blocks</a> > <a href='/#{session[:user_id]}/blocks/#{@button.block.id}'>#{@button.block.name}</a>" 
-        elsif request.path =~ /blocks\/\d+/
+        elsif request.path =~ /blocks\//
           "<a href='/#{session[:user_id]}/blocks'>Return to Blocks</a>"   
         end
       end
