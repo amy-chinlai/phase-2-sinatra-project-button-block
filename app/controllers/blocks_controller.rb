@@ -38,8 +38,8 @@ class BlocksController < ApplicationController
 
     post '/:id/blocks' do
         if authenticated?
-            if params[:block][:name] != "" && params[:block][:donation_type] != ""
-                @block = Block.new(params[:block])
+            @block = Block.new(params[:block])
+            if @block.valid?
                 @block.user = User.find_by_id(session[:user_id])
                 @block.save
                 redirect to "/#{@block.user_id}/blocks/#{@block.id}"
