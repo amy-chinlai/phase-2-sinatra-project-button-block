@@ -1,12 +1,12 @@
-<h1>Your Blocks</h1>
+<h2>Your Existing Blocks or <a href="/<%= session[:user_id] %>/blocks/new">Create New Block</a></h2>
 
-<a href="/<%= session[:user_id] %>/blocks/new">New Block</a>
+
 
 <table>
 <% @blocks.each do |block| %>
 
     <tr>
-        <td><%= block.name %></td>
+        <td> - <%= block.name %></td>
         <td><a href="/<%= block.user_id %>/blocks/<%= block.id %>">Show</td>
         <td><a href="/<%= block.user_id %>/blocks/<%= block.id %>/edit">Edit</td>
         <td><form method="POST" action="/<%= block.user_id %>/blocks/<%= block.id %>/delete">

@@ -1,10 +1,10 @@
-<h1>New Button</h1>
+<h2>New Button</h2>
 
 <form method="POST" action="/<%= @block.user_id %>/blocks/<%= @block.id %>/buttons">
 
     <label>Multiplier: </label><input type="number" name="button[multiplier]" id="multiplier" required><br><br>
     <label>Default: </label><input type="number" name="button[default]" id="default" required><br><br>
 
-    <input type="submit" value="submit">
+    <input type="submit" value="submit" class="submit-button">
 
 </form>

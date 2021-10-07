@@ -1,7 +1,17 @@
 body {
-    background-color:#CCCCCC;
+    margin: 20px;
+    font-family: sans-serif;
+    width: 50%
 }
 
-h1 {
-    color:#0000EE;
+#about {
+    width: 50%;
+}
+
+.submit-button {
+    margin-top: 10px;
+}
+
+td {
+    padding: 10px;
 }

@@ -1,7 +1,6 @@
-<h1><%= @block.name %></h1>
-<p><a href="/<%= @block.user_id %>/blocks/<%= @block.id %>/edit">Edit Block</a></p>
-<p><a href="/<%= @block.user_id %>/blocks/<%= @block.id %>/buttons/new">Add Button</a></p>
-<p>Donation Type: <%= @block.donation_type %></p>
+<h2><%= @block.name %></h2>
+<p><a href="/<%= @block.user_id %>/blocks/<%= @block.id %>/edit">Edit Block</a> || <a href="/<%= @block.user_id %>/blocks/<%= @block.id %>/buttons/new">Add Button</a></p>
+<p>Donation Type: <%= @block.donation_type.split(/(?=[A-Z])/).join(" ") %></p>
 <table>
     <th>Multiplier</th>
     <th>Default</th>
