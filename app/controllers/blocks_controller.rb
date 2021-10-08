@@ -42,10 +42,11 @@ class BlocksController < ApplicationController
             if @block.valid?
                 @block.user = User.find_by_id(session[:user_id])
                 @block.save
+                flash[:message] = "Successfully created block."
                 redirect to "/#{@block.user_id}/blocks/#{@block.id}"
             else
+                flash[:message] = "Please fill out all fields."
                 redirect to "/#{@user.id}/blocks/new"
-                # flash that fields are required
             end
         else
             redirect to "/login"
@@ -56,6 +57,7 @@ class BlocksController < ApplicationController
         if authenticated?
             @block = Block.find_by_id(params[:block_id])
             @block.update(params[:block])
+            flash[:message] = "Successfully edited block."
             redirect to "/#{@block.user_id}/blocks/#{@block.id}"
         else
             redirect to "/login"
@@ -66,8 +68,8 @@ class BlocksController < ApplicationController
         if authenticated?
             @block = Block.find_by_id(params[:block_id])
             @block.delete
+            flash[:message] = "Successfully deleted block."
             redirect to "/#{@block.user_id}/blocks"
-            # flash to acknowledge delete
         else
             redirect to "/login"
         end       

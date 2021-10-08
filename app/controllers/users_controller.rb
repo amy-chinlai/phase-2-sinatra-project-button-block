@@ -35,7 +35,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             redirect to "/#{session[:user_id]}/blocks"
         else
-            # do a flash here that fields are wrong
+            flash[:message] = "We couldn't find anyone with that username and password combination."
             redirect to "/login"
         end
     end

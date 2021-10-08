@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="/public/main.css" />
   </head>
   <body>
+  <div class="flash"><p><% if flash.has?(:message) %> <%= flash[:message] %> <% end %></p></div>
   <h1>Button Block Generator</h1>
   <%= yield %>
 <br><br><br><br>

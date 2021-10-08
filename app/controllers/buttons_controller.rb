@@ -32,6 +32,7 @@ class ButtonsController < ApplicationController
             @button = Button.new(params[:button])
             @button.block = Block.find_by_id(params[:block_id])
             @button.save
+            flash[:message] = "Successfully created button."
             redirect to "/#{@button.block.user_id}/blocks/#{@button.block.id}"
         else
             redirect to "/login"
@@ -42,6 +43,7 @@ class ButtonsController < ApplicationController
         if authenticated? 
             @button = Button.find_by_id(params[:button_id])
             @button.update(params[:button])
+            flash[:message] = "Successfully edited button."
             redirect to "/#{@button.block.user_id}/blocks/#{@button.block.id}"
         else
             redirect to "/login"
@@ -52,8 +54,8 @@ class ButtonsController < ApplicationController
         if authenticated? 
             @button = Button.find_by_id(params[:button_id])
             @button.delete
+            flash[:message] = "Successfully deleted button."
             redirect to "/#{@button.block.user_id}/blocks/#{@button.block.id}"
-            # flash to acknowledge delete
         else
             redirect to "/login"
         end
