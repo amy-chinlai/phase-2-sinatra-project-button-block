@@ -12,8 +12,7 @@ class ApplicationController < Sinatra::Base
     end
 
     not_found do
-      status 404
-      erb :oops
+      'The page you are looking for does not exist. I hope you find what you are looking for (both here and in life generally).'
     end
 
     helpers do
