@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     
 
     get '/signup' do
-        if logged_in?
+        if authenticated?
             redirect to "/#{@user.id}/blocks"
         else
             erb :'users/signup'
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     end
 
     get '/login' do
-        if logged_in?
+        if authenticated?
             redirect to "/#{session[:user_id]}/blocks"
         else
             erb :'users/login'

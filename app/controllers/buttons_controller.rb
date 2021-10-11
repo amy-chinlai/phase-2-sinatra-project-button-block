@@ -5,6 +5,7 @@ class ButtonsController < ApplicationController
             @block = Block.find_by_id(params[:block_id])
             erb :'buttons/index'
         else
+            flash[:message] = "You do not have access to that page."
             redirect to "/login"
         end
     end
@@ -14,6 +15,7 @@ class ButtonsController < ApplicationController
             @block = Block.find_by_id(params[:block_id])
             erb :'buttons/new'
         else
+            flash[:message] = "You do not have access to that page."
             redirect to "/login"
         end
     end
@@ -23,6 +25,7 @@ class ButtonsController < ApplicationController
             @button = Button.find_by_id(params[:button_id])
             erb :'buttons/edit'
         else
+            flash[:message] = "You do not have access to that page."
             redirect to "/login"
         end
     end
@@ -35,6 +38,7 @@ class ButtonsController < ApplicationController
             flash[:message] = "Successfully created button."
             redirect to "/#{@button.block.user_id}/blocks/#{@button.block.id}"
         else
+            flash[:message] = "You do not have access to that action."
             redirect to "/login"
         end
     end
@@ -46,6 +50,7 @@ class ButtonsController < ApplicationController
             flash[:message] = "Successfully edited button."
             redirect to "/#{@button.block.user_id}/blocks/#{@button.block.id}"
         else
+            flash[:message] = "You do not have access to that action."
             redirect to "/login"
         end
     end    
@@ -57,6 +62,7 @@ class ButtonsController < ApplicationController
             flash[:message] = "Successfully deleted button."
             redirect to "/#{@button.block.user_id}/blocks/#{@button.block.id}"
         else
+            flash[:message] = "You do not have access to that action."
             redirect to "/login"
         end
     end

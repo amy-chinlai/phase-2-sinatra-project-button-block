@@ -6,7 +6,7 @@ class BlocksController < ApplicationController
             erb :'blocks/index'
         else
             redirect to "/login"
-            # flash you do not have access to this page
+            flash[:message] = "You do not have access to that page."
         end
     end
 
@@ -14,6 +14,7 @@ class BlocksController < ApplicationController
         if authenticated?
             erb :'blocks/new'
         else
+            flash[:message] = "You do not have access to that page."
             redirect to "/login"
         end
     end
@@ -23,6 +24,7 @@ class BlocksController < ApplicationController
             @block = Block.find_by_id(params[:block_id])
             erb :'blocks/show'
         else
+            flash[:message] = "You do not have access to that page."
             redirect to "/login"
         end
     end
@@ -32,6 +34,7 @@ class BlocksController < ApplicationController
             @block = Block.find_by_id(params[:block_id])
             erb :'blocks/edit'
         else
+            flash[:message] = "You do not have access to that page."
             redirect to "/login"
         end
     end
@@ -49,6 +52,7 @@ class BlocksController < ApplicationController
                 redirect to "/#{@user.id}/blocks/new"
             end
         else
+            flash[:message] = "You do not have access to that action."
             redirect to "/login"
         end
     end
@@ -60,6 +64,7 @@ class BlocksController < ApplicationController
             flash[:message] = "Successfully edited block."
             redirect to "/#{@block.user_id}/blocks/#{@block.id}"
         else
+            flash[:message] = "You do not have access to that action."
             redirect to "/login"
         end
     end
@@ -71,6 +76,7 @@ class BlocksController < ApplicationController
             flash[:message] = "Successfully deleted block."
             redirect to "/#{@block.user_id}/blocks"
         else
+            flash[:message] = "You do not have access to that action."
             redirect to "/login"
         end       
     end
