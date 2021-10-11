@@ -34,8 +34,8 @@ class ApplicationController < Sinatra::Base
       end
 
       def render_breadcrumbs
-        if request.path =~ /blocks\/\d+\/buttons\/\d+/
-          "<a href='/#{session[:user_id]}/blocks'>Return to Blocks</a> > <a href='/#{session[:user_id]}/blocks/#{@button.block.id}'>#{@button.block.name}</a>" 
+        if request.path =~ /blocks\/\d+\/buttons/
+          "<a href='/#{session[:user_id]}/blocks'>Return to Blocks</a> > <a href='/#{session[:user_id]}/blocks/#{@block.id}'>#{@block.name}</a>" 
         elsif request.path =~ /blocks\//
           "<a href='/#{session[:user_id]}/blocks'>Return to Blocks</a>"   
         end
