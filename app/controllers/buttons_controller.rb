@@ -23,6 +23,7 @@ class ButtonsController < ApplicationController
     get '/:id/blocks/:block_id/buttons/:button_id/edit' do
         if authenticated? 
             @button = Button.find_by_id(params[:button_id])
+            @block = @button.block
             erb :'buttons/edit'
         else
             flash[:message] = "You do not have access to that page."
