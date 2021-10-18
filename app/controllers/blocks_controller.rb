@@ -5,8 +5,8 @@ class BlocksController < ApplicationController
             @blocks = Block.all.find_all {|b| b.user_id == params[:id].to_i}
             erb :'blocks/index'
         else
-            redirect to "/login"
             flash[:message] = "You do not have access to that page."
+            redirect to "/login"
         end
     end
 
